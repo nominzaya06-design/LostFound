@@ -179,12 +179,18 @@ a {
     letter-spacing: -1.5px;
 }
 
+.hero h1 span {
+    display: block;
+}
+
+
 .hero-blue {
     color: var(--color-blue-2);
 }
 
 .hero-search {
-    margin-top: var(--space-5);
+    max-width: 50rem;
+    margin: var(--space-5) auto 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
