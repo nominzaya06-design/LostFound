@@ -41,13 +41,33 @@ a {
     text-decoration: none;
 }
 
+/*-- Animation Hero дээрх --*/
+.hero-badge {
+    animation: fadeUp 0.7s ease;
+}
 
+.hero h1 {
+    animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(0.8rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*-- NAVBAR Дээд navigation хэсэг --*/
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0.5% 5%;
+    padding: 0.5rem 5%;
     background-color: var(--color-white-0);
     border-bottom: 1px solid var(--color-line);
     gap: var(--space-3);
@@ -84,7 +104,8 @@ a {
     padding: 0.6rem 0.85rem;
     border-radius: var(--radius-1);
     font-size: 0.8rem;
-    color: var(--color-black-2)
+    color: var(--color-black-2);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-center a.active {
@@ -93,8 +114,14 @@ a {
     font-weight: bold;
 }
 
+.nav-center a:hover {
+    background-color: var(--color-blue-3);
+    color: var(--color-blue-2);
+}
+
 .nav-right{
     display: flex;
+    align-items: center;
     gap: var(--space-2);
 }
 
@@ -105,7 +132,8 @@ a {
     gap: 0.5rem;
 }
 
- input {
+.nav-search input,
+.hero-search input {
     width: 100%;
     border: none;
     outline: none;
@@ -123,11 +151,18 @@ a {
 
 .post-btn,
 .login-btn {
-    padding: 0.7rem 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.8rem;
+    height: 2.15rem;
     border-radius: var(--radius-1);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: bold;
+    white-space: nowrap;
 }
+
+
 
 .post-btn {
     background-color: var(--color-blue-1);
@@ -140,17 +175,19 @@ a {
 }
 
 .profile-btn {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 2rem;
-    height: 2rem;
-    border: 1px solid var(--color-line);
+    width: 2.2rem;
+    height: 2.2rem;
+    border: 1.5px solid var(--color-line);
     border-radius: 50%;
     background-color: var(--color-blue-3);
     color: var(--color-blue-2);
-    font-size: 0.75rem;
+    font-size: 0.78rem;
 }
+
+/* HERO SECTION */
 
 .hero {
     width: 90%;
@@ -209,10 +246,13 @@ a {
     font-weight: bold;
 }
 
+/* BOTTOM NAV */
 .bottom-nav {
     display: none ;
 }
 
+
+/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
     .nav {
         padding: 0.9rem 4%;
@@ -277,5 +317,4 @@ a {
     padding-bottom: 4.5rem;
     }
 }
-
 

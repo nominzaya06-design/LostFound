@@ -1,0 +1,263 @@
+/* ── Auth page fade-in animation ── */
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(1.2rem);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Card animates in on load */
+    .auth-card {
+      animation: fadeSlideUp 0.5s ease both;
+    }
+
+    /* Left image animates in slightly later */
+    .auth-left {
+      animation: fadeSlideUp 0.5s 0.1s ease both;
+    }
+
+    /* ── Input focus transition ── */
+    .auth-form input {
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .auth-form input:focus {
+      outline: none;
+      border-color: var(--color-blue-1);
+      box-shadow: 0 0 0 3px hsl(222, 82%, 92%);
+    }
+
+    /* ── Submit button hover transition ── */
+    .auth-submit {
+      transition: background-color 0.2s ease, transform 0.15s ease;
+      cursor: pointer;
+    }
+
+    .auth-submit:hover {
+      background-color: var(--color-blue-2);
+      transform: translateY(-1px);
+    }
+
+    .auth-submit:active {
+      transform: translateY(0);
+    }
+
+
+
+
+/* -- AUTH PAGE -- */
+.auth-page {
+    width: min(92%, 1040px);
+    margin: 0 auto;
+    padding: 1.6rem 0 2.6rem;
+}
+
+.auth-layout {
+    display: grid;
+    grid-template-columns: 1.08fr 0.82fr;
+    gap: 2.4rem;
+    align-items: center;
+}
+
+/* ── Зүүн талын зургийн хэсэг ── */
+.auth-left {
+    position: relative;
+    min-height: 39rem;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.auth-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.auth-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(79, 124, 243, 0.62);
+}
+
+.auth-left-text {
+    position: absolute;
+    left: 2.2rem;
+    right: 1.8rem;
+    bottom: 2.1rem;
+    color: var(--color-white-0);
+}
+
+.auth-left-text h2 {
+    font-size: 1.95rem;
+    line-height: 1.15;
+    margin-bottom: 0.7rem;
+    font-weight: 700;
+}
+
+.auth-left-text p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* ── Баруун талын card ── */
+.auth-card {
+    width: 100%;
+    max-width: 24.5rem;
+    justify-self: center;
+    background: var(--color-white-0);
+    border: 1px solid var(--color-line);
+    border-radius: 1.05rem;
+    box-shadow: 0 0.7rem 2rem rgba(0, 0, 0, 0.09);
+    overflow: hidden;
+}
+
+.auth-card-inner {
+    padding: 1.65rem 1.45rem 1.25rem;
+}
+
+.auth-card h1 {
+    text-align: center;
+    font-size: 1.65rem;
+    color: var(--color-black-1);
+    margin-bottom: 0.45rem;
+    font-weight: 700;
+}
+
+.auth-subtitle {
+    text-align: center;
+    color: var(--color-black-3);
+    font-size: 0.9rem;
+    line-height: 1.45;
+    margin-bottom: 1.35rem;
+}
+
+/* ── Маягтын хэсэг ── */
+.auth-form {
+    display: grid;
+    gap: 0.95rem;
+}
+
+.form-group {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--color-black-1);
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+}
+
+.form-link {
+    font-size: 0.8rem;
+    color: var(--color-blue-1);
+    font-weight: 600;
+}
+
+.auth-form input {
+    width: 100%;
+    height: 2.75rem;
+    padding: 0 0.9rem;
+    border: 1px solid var(--color-line);
+    border-radius: 0.72rem;
+    background: var(--color-white-0);
+    font-size: 0.88rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: var(--color-blue-1);
+    box-shadow: 0 0 0 3px var(--color-blue-3);
+}
+
+.auth-submit {
+    width: 100%;
+    height: 2.8rem;
+    margin-top: 0.25rem;
+    border: none;
+    border-radius: 0.72rem;
+    background-color: var(--color-blue-1);
+    color: var(--color-white-0);
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.auth-card-footer {
+    padding: 0.95rem 1.2rem;
+    border-top: 1px solid var(--color-line);
+    text-align: center;
+    background: var(--color-white-1);
+    font-size: 0.84rem;
+    color: var(--color-black-3);
+}
+
+.auth-card-footer a {
+    color: var(--color-blue-1);
+    font-weight: 600;
+}
+
+/* --RESPONSIVE — AUTH + BOTTOM NAV -- */
+@media (max-width: 768px) {
+    .auth-page {
+        width: min(100% - 2rem, 28rem);
+        padding: 1rem 0 5rem;
+    }
+
+    .auth-layout {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .auth-left {
+        display: none;
+    }
+
+    .auth-card {
+        max-width: none;
+        width: 100%;
+    }
+
+    .auth-card-inner {
+        padding: 1.25rem 1rem 1.05rem;
+    }
+
+    .auth-card h1 {
+        font-size: 1.45rem;
+    }
+
+    .auth-subtitle {
+        font-size: 0.84rem;
+        margin-bottom: 1.1rem;
+    }
+
+    .form-group label,
+    .form-link {
+        font-size: 0.8rem;
+    }
+
+    .auth-form input,
+    .auth-submit {
+        height: 2.7rem;
+        font-size: 0.86rem;
+    }
+
+    .auth-card-footer {
+        padding: 0.9rem 1rem;
+        font-size: 0.8rem;
+    }
+
+}

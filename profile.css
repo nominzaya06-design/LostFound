@@ -1,0 +1,307 @@
+/* Animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(1rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/*-- Profile layout --*/
+.profile-page {
+  width: 90%;
+  max-width: 1100px;
+  margin: 2rem auto 3rem;
+}
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/*-- Left card --*/
+.profile-card,
+.report-card {
+  background: var(--color-white-0);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-2);
+}
+
+.profile-card {
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  animation: fadeUp 0.4s ease both;
+}
+
+.profile-avatar {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: var(--color-blue-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--color-blue-2);
+  box-shadow: 0 0 0 2px var(--color-line);
+}
+
+.profile-avatar::after {
+  content: "";
+  position: absolute;
+  right: 0.2rem;
+  bottom: 0.2rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: hsl(142, 71%, 45%);
+  border: 2px solid var(--color-white-0);
+}
+
+.profile-name {
+  font-size: 1.1rem;
+  color: var(--color-black-1);
+}
+
+.profile-badge,
+.reports-count,
+.badge {
+  font-weight: bold;
+  border-radius: var(--radius-3);
+}
+
+.profile-badge {
+  padding: 0.3rem 0.7rem;
+  background: var(--color-blue-3);
+  color: var(--color-blue-2);
+  font-size: 0.72rem;
+}
+
+.profile-info {
+  width: 100%;
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  background: var(--color-white-1);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-1);
+}
+
+.info-row dt {
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: var(--color-black-3);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.info-row dd {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-black-1);
+}
+
+/*-- Buttons --*/
+.profile-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.profile-secondary,
+.report-footer,
+.reports-header {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.profile-secondary {
+  justify-content: center;
+}
+
+.btn-admin,
+.btn-settings,
+.btn-logout,
+.btn-new-report,
+.btn-status,
+.btn-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-1);
+  font-size: 0.78rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-admin,
+.btn-settings,
+.btn-logout {
+  padding: 0.65rem;
+}
+
+.btn-admin,
+.btn-new-report {
+  background: var(--color-blue-1);
+  color: var(--color-white-0);
+}
+
+.btn-admin:hover,
+.btn-new-report:hover {
+  background: var(--color-blue-2);
+}
+
+.btn-admin:hover {
+  transform: translateY(-1px);
+}
+
+.btn-settings,
+.btn-status,
+.btn-delete {
+  border: 1px solid var(--color-line);
+  background: transparent;
+}
+
+.btn-settings 
+.btn-logout{
+  flex: 1;
+  color: var(--color-black-2);
+}
+
+.btn-settings:hover {
+  background: var(--color-white-1);
+}
+
+.btn-logout,
+.btn-delete {
+  color: #ef4444;
+}
+
+.btn-logout:hover,
+.btn-delete:hover {
+  background: #fff0f0;
+}
+
+/*-- Right reports --*/
+.reports-section {
+  animation: fadeUp 0.4s 0.1s ease both;
+}
+
+.reports-header {
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.reports-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.reports-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  background: var(--color-blue-3);
+  color: var(--color-blue-2);
+  font-size: 0.72rem;
+}
+
+.btn-new-report {
+  padding: 0.45rem 0.9rem;
+}
+
+.report-card {
+  max-width: 30rem;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.report-card:hover {
+  box-shadow: 0 0.4rem 1.2rem var(--color-shadow);
+  transform: translateY(-2px);
+}
+
+.report-img {
+  position: relative;
+  height: 10rem;
+  overflow: hidden;
+}
+
+.report-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.68rem;
+  color: var(--color-white-0);
+}
+
+.badge.found { background: #22c55e; }
+.badge.lost  { background: #ef4444; }
+
+.report-body {
+  padding: 1rem;
+}
+
+.report-body h3 {
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+.report-meta {
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-black-3);
+}
+
+.report-desc {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--color-black-2);
+}
+
+.report-footer {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--color-line);
+}
+
+.btn-status { color: var(--color-blue-2); }
+.btn-status:hover { background: var(--color-blue-3); }
+
+.btn-delete {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+
+/*-- Mobile --*/
+@media (max-width: 768px) {
+  .profile-page {
+    width: 92%;
+    margin-bottom: 5rem;
+  }
+
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+}
