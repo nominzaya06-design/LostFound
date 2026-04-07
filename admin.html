@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>Admin - Campus Lost & Found</title>
+  <link rel="stylesheet" href="style-admin,details.css">
+  <link rel="stylesheet" href="/css-font/fonts.css">
+  <link rel="stylesheet" href="admin.css">
+
+ 
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container flex items-center justify-between">
+      <div class="flex items-center gap-6">
+        <a href="/" class="logo-area">
+          <img src="images/num-logo.jpg" alt="NUM Logo" class="logo-img" onerror="this.src='/images/num-logo.jpg'">
+          <div class="logo-text">
+            <span class="logo-title">Lost&Found</span>
+            <span class="logo-subtitle">NUM / МУИС</span>
+          </div>
+        </a>
+        
+        <div class="nav-links">
+          <a href="/" class="nav-link">Home Items</a>
+          <a href="/lost" class="nav-link">Lost Items</a>
+          <a href="/found" class="nav-link">Found Items</a>
+        </div>
+      </div>
+
+      <div class="search-bar">
+        <i data-lucide="search" class="search-icon"></i>
+        <input type="search" placeholder="Search items, locations...">
+      </div>
+
+      <div class="nav-actions">
+        <a href="/post" class="btn btn-primary">Post Item</a>
+        <a href="/profile" class="btn btn-ghost" style="border-radius: 9999px; padding: 0.5rem; border: 1px solid var(--border);">
+          <div style="width: 2rem; height: 2rem; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 600;">
+            JD
+          </div>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="admin-layout" style="min-height: calc(100vh - 4rem);">
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <h2 class="admin-sidebar-title">
+          <i data-lucide="shield-check" style="margin-right: 0.5rem; width: 1.25rem; height: 1.25rem;"></i>
+          Admin Panel
+        </h2>
+      </div>
+      <nav class="admin-nav">
+        <button class="admin-nav-item" onclick="switchTab('dashboard')" id="tab-btn-dashboard">
+          <i data-lucide="layout-dashboard"></i> Dashboard
+        </button>
+        <button class="admin-nav-item active" onclick="switchTab('posts')" id="tab-btn-posts">
+          <i data-lucide="package"></i> Manage Posts
+        </button>
+        <button class="admin-nav-item" onclick="switchTab('users')" id="tab-btn-users">
+          <i data-lucide="users"></i> Manage Users
+        </button>
+        <a href="/" class="admin-nav-item" style="margin-top: 1rem; border-top: 1px solid var(--border); border-radius: 0; padding-top: 1rem;">
+          <i data-lucide="arrow-left"></i> Back to Site
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Admin Content -->
+    <main class="admin-content">
+      <div class="admin-header">
+        <h1 class="admin-page-title" id="page-title">Manage Posts</h1>
+      </div>
+
+      <!-- Dashboard Tab -->
+      <div id="tab-dashboard" class="tab-content">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+          <div class="admin-card" style="padding: 1.5rem;">
+            <h3 style="font-size: 0.875rem; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Total Reports</h3>
+            <div style="font-size: 2.25rem; font-weight: 700;">24</div>
+          </div>
+          <div class="admin-card" style="padding: 1.5rem;">
+            <h3 style="font-size: 0.875rem; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Lost Items</h3>
+            <div style="font-size: 2.25rem; font-weight: 700; color: #ef4444;">15</div>
+          </div>
+          <div class="admin-card" style="padding: 1.5rem;">
+            <h3 style="font-size: 0.875rem; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Found Items</h3>
+            <div style="font-size: 2.25rem; font-weight: 700; color: #10b981;">9</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Posts Tab -->
+      <div id="tab-posts" class="tab-content active">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">All Item Reports</h2>
+            <div class="admin-search-wrapper">
+              <i data-lucide="search" class="admin-search-icon"></i>
+              <input type="text" placeholder="Search posts...">
+            </div>
+          </div>
+          <div style="overflow-x: auto;">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Status</th>
+                  <th>Posted By</th>
+                  <th>Date</th>
+                  <th style="text-align: right;">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="item-cell">
+                      <img src="images/phone.jpg" alt="iPhone" class="item-img" onerror="this.src='/images/phone.jpg'">
+                      <span class="item-title">Black iPhone 13 Pro</span>
+                    </div>
+                  </td>
+                  <td><span class="badge found" style="background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2);">Found</span></td>
+                  <td style="color: var(--text-muted);">John Doe</td>
+                  <td style="color: var(--text-muted);">Oct 24, 2023</td>
+                  <td style="text-align: right;">
+                    <button class="btn-icon success" title="Approve/Mark Resolved"><i data-lucide="check-circle"></i></button>
+                    <button class="btn-icon danger" title="Delete"><i data-lucide="trash-2"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="item-cell">
+                      <img src="images/wallet.jpg" alt="Wallet" class="item-img" onerror="this.src='/images/wallet.jpg'">
+                      <span class="item-title">Brown Leather Wallet</span>
+                    </div>
+                  </td>
+                  <td><span class="badge lost" style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2);">Lost</span></td>
+                  <td style="color: var(--text-muted);">Sarah Smith</td>
+                  <td style="color: var(--text-muted);">Oct 23, 2023</td>
+                  <td style="text-align: right;">
+                    <button class="btn-icon success" title="Approve/Mark Resolved"><i data-lucide="check-circle"></i></button>
+                    <button class="btn-icon danger" title="Delete"><i data-lucide="trash-2"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="item-cell">
+                      <img src="images/laptop.jpg" alt="MacBook" class="item-img" onerror="this.src='/images/laptop.jpg'">
+                      <span class="item-title">MacBook Pro 14"</span>
+                    </div>
+                  </td>
+                  <td><span class="badge lost" style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2);">Lost</span></td>
+                  <td style="color: var(--text-muted);">Mike Johnson</td>
+                  <td style="color: var(--text-muted);">Oct 22, 2023</td>
+                  <td style="text-align: right;">
+                    <button class="btn-icon success" title="Approve/Mark Resolved"><i data-lucide="check-circle"></i></button>
+                    <button class="btn-icon danger" title="Delete"><i data-lucide="trash-2"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Users Tab -->
+      <div id="tab-users" class="tab-content">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Manage Users</h2>
+          </div>
+          <div style="padding: 3rem; text-align: center; color: var(--text-muted);">
+            <i data-lucide="users" style="width: 3rem; height: 3rem; margin: 0 auto 1rem; opacity: 0.5;"></i>
+            <p>User management interface is under development.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer style="border-top: 1px solid var(--border); padding: 2rem 0; margin-top: 3rem; background-color: white;">
+    <div class="container" style="text-align: center; font-size: 0.875rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+      <p>© 2023 Campus Lost & Found. All rights reserved.</p>
+      <div style="display: flex; gap: 1.5rem;">
+        <a href="#" style="transition: color 0.2s;">About</a>
+        <a href="#" style="transition: color 0.2s;">Contact</a>
+        <a href="#" style="transition: color 0.2s;">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+</html>

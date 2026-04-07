@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lost&Found</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="ContactInfo.css" />
+  </head>
+  <body>
+    <!-- Dummy Popup toggle checkbox -->
+    <input type="checkbox" id="popup-toggle" />
+
+    <div class="content">
+      <label for="popup-toggle" class="open-label">
+        <span class="open-btn">Click Me</span>
+      </label>
+    </div>
+<!-- Overlay for the popup -->
+    <div class="overlay"></div>
+    <!-- Popup content -->
+    <div class="popup">
+      <div class="Contact-info-title-section">
+        <div class="Contact-info-title">Contact information</div>
+        <div class="Contact-info-description">
+          Reach out to the person regarding this item.
+        </div>
+      </div>
+      <div class="Contact-infos">
+        <div>
+          <div>Name</div>
+          <div class="Contact-info-description">John Doe</div>
+        </div>
+        <div>
+          <div>Phone number</div>
+          <div class="Contact-info-description">+976 12345678</div>
+        </div>
+        <div>
+          <div>Email</div>
+          <div class="Contact-info-description">example@example.com</div>
+        </div>
+      </div>
+      <!-- Close button for the popup -->
+      <label for="popup-toggle" class="close-label">
+        <span class="got-it-btn">Got it</span>
+      </label>
+    </div>
+  </body>
+</html>

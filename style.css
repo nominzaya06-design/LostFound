@@ -1,10 +1,19 @@
+
+/* 
+Global css
+*/
 :root{
+    --color-blue-0: hsl(223, 66%, 74%);
     --color-blue-1: hsl(222, 82%, 62%);
     --color-blue-2: hsl(223, 60%, 36%);
     --color-blue-3: hsl(223, 55%, 93%);
+ 
+
 
     --color-white-0: hsl(0, 0%, 100%);
     --color-white-1: hsl(0, 0%, 97%);
+    --color-white-2: hsl(0, 0%, 90%);
+    --color-white-3: hsl(0, 0%, 85%);
 
     --color-black-1: hsl(0, 0%, 12%);
     --color-black-2: hsl(0, 0%, 28%);
@@ -13,6 +22,7 @@
     --color-line: hsl(0, 0%, 86%);
     --color-shadow: hsla(0, 0%, 0%, 0.08);
 
+    --space-0: 0rem;
     --space-1: 0.3rem;
     --space-2: 0.6rem;
     --space-3: 0.9rem;
@@ -24,7 +34,14 @@
     --radius-2: 0.9rem;
     --radius-3: 2rem;
      --transition: 0.3s ease;
+    --font-size-1: 0.5rem;
+    --font-size-2: 0.75rem;
+    --font-size-3: 1rem;
+    --font-size-4: 1.25rem;
+    --font-size-5: 1.5rem;
 }
+
+
 
 * {
     margin: 0;

@@ -1,0 +1,146 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+  
+  body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: var(--space-4);
+  }
+
+  /* Hide checkbox */
+  #popup-toggle {
+    display: none;
+  }
+
+  /* Main content */
+  .content {
+    transition: all 0.3s;
+  }
+
+  /* When checkbox checked, darken and disable main content */
+  #popup-toggle:checked ~ .content {
+    opacity: 0.6;
+    pointer-events: none;
+    background: var(--black-1);
+  }
+
+  /* Dark overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:var(--black-2);
+    display: none;
+    z-index: 998;
+  }
+
+  #popup-toggle:checked ~ .overlay {
+    display: block;
+  }
+
+
+  .open-btn {
+    padding: var(--space-2) var(--space-5);
+    font-size: var(--font-size-2);
+    background: var(--color-blue-1);
+    color: var(--color-white-0);
+    border: none;
+    border-radius: var(--radius-1);
+    cursor: pointer;
+  }
+
+  .open-btn:hover {
+    background: var(--color-blue-2);
+  }
+
+  .popup label {
+ width: 100%;
+  }
+
+.got-it-btn {
+    text-align: center;
+    padding-top: var(--space-3);     
+    padding-bottom: var(--space-3);  
+    padding-left: var(--space-4);    
+    padding-right: var(--space-4);   
+    background: var(--color-blue-1);
+    color: var(--color-white-0);
+    border: none;
+    border-radius: var(--radius-1);
+    cursor: pointer;
+    font-size: var(--font-size-3);   
+    width: 100%;
+    display: block;                   
+}
+
+/* Make sure the label wrapper doesn't limit the width */
+.popup .close-label {
+    width: 100%;
+    display: block;
+}
+   .got-it-btn:active ~ .popup{
+    display: none;
+   }
+
+  .got-it-btn:hover {
+    background: var(--color-blue-2);
+  }
+  /* Popup section */
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: var(--space-5);
+    border-radius: var(--radius-2);
+    box-shadow: var(--space-0) var(--space-1) var(--space-6) var(--color-shadow);
+    z-index: 999;
+    width: 60vw;
+    min-width: 300px;
+    display: none;
+    
+  }
+
+  #popup-toggle:checked ~ .popup {
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+
+.Contact-info-title-section{
+font: bold;
+
+
+}
+.Contact-info-title{
+    font:bold;
+    font-size: var(--font-size-4);
+    color: var(--color-black-1);
+
+}
+.Contact-info-description{
+    font-size: var(--font-size-2);
+    color: var(--color-black-3);
+}
+             
+
+.Contact-infos{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+            
