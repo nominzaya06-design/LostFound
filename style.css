@@ -3,6 +3,11 @@
 Global css
 */
 :root{
+     --primary:  hwb(120 5% 54%);
+  --bg: hsl(216, 33%, 97%);
+  --text: hsl(0, 0%, 20%);
+    --color-red-1:hsl(0, 77%, 43%);
+
     --color-blue-0: hsl(223, 66%, 74%);
     --color-blue-1: hsl(222, 82%, 62%);
     --color-blue-2: hsl(223, 60%, 36%);
